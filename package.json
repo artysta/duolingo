@@ -1,5 +1,5 @@
 {
-  "name": "@artysta/duolingo-api",
+  "name": "@artysta/duolingo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/artysta/duolingo-api.git"
+    "url": "git+https://github.com/artysta/duolingo.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/artysta/duolingo-api/issues"
+    "url": "https://github.com/artysta/duolingo/issues"
   },
-  "homepage": "https://github.com/artysta/duolingo-api#readme"
+  "homepage": "https://github.com/artysta/duolingo#readme"
 }
