@@ -1,5 +1,3 @@
-function helloWorld() {
-    console.log('Hello npm!');
-}
+import Duolingo from "./src/Duolingo";
 
-module.exports = helloWorld;
+export { Duolingo };
