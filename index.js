@@ -1,3 +1,3 @@
-import Duolingo from "./src/Duolingo";
+const Duolingo = require('./src/Duolingo');
 
-export { Duolingo };
+module.exports = Duolingo;

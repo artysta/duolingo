@@ -21,4 +21,4 @@ const languages = [
     }
 ];
 
-export { languages };
+module.exports = languages;

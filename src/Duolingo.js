@@ -38,4 +38,4 @@ class Duolingo {
     }
 }
 
-export { Duolingo };
+module.exports = Duolingo;
