@@ -1,4 +1,5 @@
 const XMLHttpRequest = require('xhr2');
+const { languages } = require('./constants');
 
 class Duolingo {
     constructor(userName) {
