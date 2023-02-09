@@ -10,7 +10,7 @@ You can add this package to your project by running the command below:
 
 ## 2. Usage example.
 
-Below you can find some examples.
+Below you can find some usage examples.
 
 ```javascript
 const Duolingo = require('duolingo');
