@@ -1,3 +1,5 @@
+const XMLHttpRequest = require('xhr2');
+
 class Duolingo {
     constructor(userName) {
         this.baseUrl = `https://www.duolingo.com/2017-06-30/users`;
@@ -8,8 +10,17 @@ class Duolingo {
     }
 
     async init() {
-        this.response = await fetch(this.baseUrl);
-        this.data = await this.response.json();
+        // TODO: Move to separate function/class. 
+        const response = await new Promise(resolve => {
+            const request = new XMLHttpRequest();
+            request.open("GET", this.baseUrl, true);
+            request.onload = function(e) {
+                resolve(request.response);
+            };
+            request.send();
+        })
+
+        this.data = JSON.parse(response);
     }
 
     getResponseStatus() {
