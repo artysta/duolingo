@@ -1,6 +1,6 @@
 # duolingo
 
-This npm package is quite simple and rather not perfect. My main goal in creating this package was to learn how to create my own npm packages and how to add them to the official npm repository. Anyway, I believe that it might be useful for someone.
+This npm package is quite simple and rather not perfect. My main goal in creating this package was to learn how to create my own npm packages and how to add them to the official npm repository. Anyway, I believe that it might be useful for someone. 🙃
 
 ## 1. Installation.
 
@@ -23,7 +23,7 @@ const Duolingo = require('duolingo');
     console.log(streak); // Output: 272
 
     const totalXp = duo.getField('totalXp');
-    console.log(totalXp); // Output: 272
+    console.log(totalXp); // Output: 114189
 
     const learningLanguage = duo.getField('learningLanguage');
     console.log(learningLanguage); // Output: de
