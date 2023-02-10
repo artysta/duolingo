@@ -79,6 +79,10 @@ const Duolingo = require('duolingo');
 
     const learningLanguageEmojiFlag = duo.getLanguageDetail(learningLanguage, 'emojiFlag');
     console.log(learningLanguageEmojiFlag); // Output: 🇩🇪
+
+    // Get total crowns from all courses.
+    const totalCrowns = duo.getTotalCrowns('courses');
+    console.log(totalCrowns);
 })();
 ```
 
