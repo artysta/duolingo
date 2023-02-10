@@ -11,17 +11,19 @@ class Duolingo {
     }
 
     async init() {
-        // TODO: Move to separate function/class. 
-        const response = await new Promise(resolve => {
+        const response = await this.fetch(this.baseUrl);
+        this.data = JSON.parse(response);
+    }
+
+    async fetch(url) {
+        return await new Promise(resolve => {
             const request = new XMLHttpRequest();
-            request.open("GET", this.baseUrl, true);
+            request.open("GET", url, true);
             request.onload = function(e) {
                 resolve(request.response);
             };
             request.send();
         })
-
-        this.data = JSON.parse(response);
     }
 
     getResponseStatus() {
