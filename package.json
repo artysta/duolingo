@@ -1,7 +1,7 @@
 {
   "name": "duolingo",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "A tiny package that makes using (unofficial) Duolingo API easier.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/artysta/duolingo.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["duolingo", "api"],
+  "author": "Adrian Kurek",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/artysta/duolingo/issues"
