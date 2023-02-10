@@ -1,14 +1,59 @@
 # duolingo
 
+## 1. Description
+
 This npm package is quite simple and rather not perfect. My main goal in creating this package was to learn how to create my own npm packages and how to add them to the official npm repository. Anyway, I believe that it might be useful for someone. 🙃
 
-## 1. Installation.
+## 2. Installation.
 
 You can add this package to your project by running the command below:
 
     npm install duolingo
 
-## 2. Usage example.
+## 3. Usage example.
+
+You can use `getField` method to get the value of the specific field from the response. Below you can find the available fields (as of 10.02.2023):
+
+```javascript
+const fields = [
+    'joinedClassroomIds',
+    'streak',
+    'motivation',
+    'acquisitionSurveyReason',
+    'shouldForceConnectPhoneNumber',
+    'picture',
+    'learningLanguage',
+    'hasFacebookId',
+    'shakeToReportEnabled',
+    'liveOpsFeatures',
+    'canUseModerationTools',
+    'id',
+    'betaStatus',
+    'hasGoogleId',
+    'privacySettings',
+    'fromLanguage',
+    'hasRecentActivity15',
+    '_achievements',
+    'observedClassroomIds',
+    'username',
+    'bio',
+    'profileCountry',
+    'globalAmbassadorStatus',
+    'currentCourseId',
+    'hasPhoneNumber',
+    'creationDate',
+    'achievements',
+    'hasPlus',
+    'name',
+    'roles',
+    'classroomLeaderboardsEnabled',
+    'emailVerified',
+    'courses',
+    'totalXp'
+];
+```
+
+You can use `getLanguageDetail` method to get some details related to the language that you are currently learning. For example if your learning language is english, method `getField('learningLanguage')` will return `en` value. Then you can pass this value to `getLanguageDetail` method and get the full name of the language or its Emoji flag. 
 
 Below you can find some usage examples.
 
@@ -16,6 +61,7 @@ Below you can find some usage examples.
 const Duolingo = require('duolingo');
 
 (async() => {
+    // You have to pass your Duolingo user name to the constructor and use async method init() to prepare the data.
     const duo = new Duolingo('adrian_kurek');
     await duo.init();
 
@@ -28,15 +74,15 @@ const Duolingo = require('duolingo');
     const learningLanguage = duo.getField('learningLanguage');
     console.log(learningLanguage); // Output: de
 
-    const learninLanguageFullName = duo.getLanguageDetail(learningLanguage, 'fullName');
-    console.log(learninLanguageFullName); // Output: German
+    const learnincLanguageFullName = duo.getLanguageDetail(learningLanguage, 'fullName');
+    console.log(learningLanguageFullName); // Output: German
 
     const learninLanguageEmojiFlag = duo.getLanguageDetail(learningLanguage, 'emojiFlag');
-    console.log(learninLanguageEmojiFlag); // Output: 🇩🇪
+    console.log(learningLanguageEmojiFlag); // Output: 🇩🇪
 })();
 ```
 
-## 3. Contribution.
+## 4. Contribution.
 
 At the moment `getLanguageDetail` method supports only 4 languages (Polish, English, German and Spanish).
 
