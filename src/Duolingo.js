@@ -3,15 +3,13 @@ const { languages } = require('./constants');
 
 class Duolingo {
     constructor(userName) {
-        this.baseUrl = `https://www.duolingo.com/2017-06-30/users`;
         this.userName = userName;
+        this.url = `https://www.duolingo.com/2017-06-30/users?username=${userName}`;
         this.data;
-        this.response;
-        this.baseUrl = `${this.baseUrl}?username=${userName}`;
     }
 
     async init() {
-        const response = await this.fetch(this.baseUrl);
+        const response = await this.fetch(this.url);
         this.data = JSON.parse(response);
     }
 
@@ -24,14 +22,6 @@ class Duolingo {
             };
             request.send();
         })
-    }
-
-    getResponseStatus() {
-        if (this.data == undefined) {
-            throw new Error('Data is not available. Please ensure that you have used init method that is responsible for preparing data!');
-        }
-
-        return this.response.status;
     }
 
     getField(field) {
@@ -49,6 +39,10 @@ class Duolingo {
     getLanguageDetail(shortName, field) {
         const result = languages.filter(l => l.shortName === shortName)[0];
         return result == undefined ? shortName : result[field];
+    }
+
+    getTotalCrowns() {
+        return this.getField('courses').reduce((s, c) => s + c.crowns, 0);
     }
 }
 
