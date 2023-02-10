@@ -74,10 +74,10 @@ const Duolingo = require('duolingo');
     const learningLanguage = duo.getField('learningLanguage');
     console.log(learningLanguage); // Output: de
 
-    const learnincLanguageFullName = duo.getLanguageDetail(learningLanguage, 'fullName');
+    const learningLanguageFullName = duo.getLanguageDetail(learningLanguage, 'fullName');
     console.log(learningLanguageFullName); // Output: German
 
-    const learninLanguageEmojiFlag = duo.getLanguageDetail(learningLanguage, 'emojiFlag');
+    const learningLanguageEmojiFlag = duo.getLanguageDetail(learningLanguage, 'emojiFlag');
     console.log(learningLanguageEmojiFlag); // Output: 🇩🇪
 })();
 ```
