@@ -80,9 +80,9 @@ const Duolingo = require('duolingo');
     const learningLanguageEmojiFlag = duo.getLanguageDetail(learningLanguage, 'emojiFlag');
     console.log(learningLanguageEmojiFlag); // Output: 🇩🇪
 
-    // Get total crowns from all courses.
-    const totalCrowns = duo.getTotalCrowns('courses');
-    console.log(totalCrowns);
+    // Get total crowns from all of the courses.
+    const totalCrowns = duo.getTotalCrowns();
+    console.log(totalCrowns); // Output: 696
 })();
 ```
 
@@ -100,3 +100,41 @@ New languages can be simply added to the `languages` constant array in `./src/co
 }
 ```
 
+
+## 5. Duolingo Statistics Card
+
+I used this npm package to create Duolingo Statistics Card that displays some statistics for a specific user (data is always "fresh" as the package is using API to retrieve it). This card can be displayed on a webpage, in the GitHub special repository or any other markdown files (e.g. README.md). The example below is showing how the URL should look like:
+
+    https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4
+    
+The **user** query parameter is require. At the moment only 4 fields are supported: **streak**, **totalXp**, **totalCrowns**, **learningLanguage**. Fields in the URL query should be separated by comma. You have to provide at least **1** field in the query.
+
+For example, below you can find a valid URL for my Duolingo user:
+
+    https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=streak,totalXp,totalCrowns,learningLanguage
+
+If it comes to a GitHub special repository or any other markdown file you can just use the markdown example below:
+
+    [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4)](https://github.com/artysta/artysta-cloud)
+    
+Here are some examples how the cards can look like (I have also included non valid URL):
+
+All available fields:
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=streak,totalXp,totalCrowns,learningLanguage)](https://github.com/artysta/artysta-cloud)
+
+All available fields (different fields order - the order in which the fields are displayed depends on the order in which they are given in the query):
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=totalCrowns,learningLanguage,totalXp,streak)](https://github.com/artysta/artysta-cloud)
+
+Only 2 fields:
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=totalCrowns,streak)](https://github.com/artysta/artysta-cloud)
+
+The user parameter missing:
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?fields=totalCrowns)](https://github.com/artysta/artysta-cloud)
+
+---
+
+If I find some free time (unfortunately, a day is only 24 hours long 😢) I will try to upgrade the cards and add possibility to change their style, make the title (made with ❤️...) optional using query parameters etc.
