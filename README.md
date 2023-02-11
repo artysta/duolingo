@@ -1,6 +1,6 @@
 # duolingo
 
-## 1. Description
+## 1. Description.
 
 This npm package is quite simple and rather not perfect. My main goal in creating this package was to learn how to create my own npm packages and how to add them to the official npm repository. Anyway, I believe that it might be useful for someone. 🙃
 
@@ -109,7 +109,7 @@ Anyway, the cards can be displayed on a webpage, in the GitHub special repositor
 
     https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4
     
-The `user` query parameter is require. At the moment only 4 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`. Fields in the URL query should be separated by comma. You have to provide at least 1 `field` in the query.
+The `user` query parameter is required. At the moment only 4 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`. Fields in the URL query should be separated by comma. You have to provide at least 1 `field` in the query.
 
 For example, below you can find a valid URL for my Duolingo user:
 
@@ -119,7 +119,7 @@ If it comes to a GitHub special repository or any other markdown file you can ju
 
     [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4)](https://github.com/artysta/artysta-cloud)
     
-Here are some examples how the cards can look like (I have also included non valid URL):
+Here are some examples how the cards can look like (I have also included non valid URLs, so some of the cards are displaying error messages):
 
 All available fields:
 
