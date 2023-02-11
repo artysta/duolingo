@@ -12,7 +12,7 @@ You can add this package to your project by running the command below:
 
 ## 3. Usage example.
 
-You can use `getField` method to get the value of the specific field from the response. Below you can find the available fields (as of 10.02.2023):
+You can use `getField` method to get the value of the specific field from the response. Below you can find the available fields **(as of 10.02.2023)**:
 
 ```javascript
 const fields = [
@@ -103,11 +103,13 @@ New languages can be simply added to the `languages` constant array in `./src/co
 
 ## 5. Duolingo Statistics Card
 
-I used this npm package to create Duolingo Statistics Card that displays some statistics for a specific user (data is always "fresh" as the package is using API to retrieve it). This card can be displayed on a webpage, in the GitHub special repository or any other markdown files (e.g. README.md). The example below is showing how the URL should look like:
+I used this npm package to create Duolingo Statistics Card that displays some statistics for a specific user. The data is always "fresh" as the package is using the API to retrieve it, but to be honest I do not know how many times a single IP address can hit this API, because it is not really "official". Therefore I cannot guarantee that the application which allows to render those cards will be working without any problems.
+
+Anyway, the cards can be displayed on a webpage, in the GitHub special repository or any other markdown files (e.g. `README.md`). The example below is showing how the URL should look like:
 
     https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4
     
-The **user** query parameter is require. At the moment only 4 fields are supported: **streak**, **totalXp**, **totalCrowns**, **learningLanguage**. Fields in the URL query should be separated by comma. You have to provide at least **1** field in the query.
+The `user` query parameter is require. At the moment only 4 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`. Fields in the URL query should be separated by comma. You have to provide at least 1 `field` in the query.
 
 For example, below you can find a valid URL for my Duolingo user:
 
@@ -123,17 +125,29 @@ All available fields:
 
 [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=streak,totalXp,totalCrowns,learningLanguage)](https://github.com/artysta/artysta-cloud)
 
-All available fields (different fields order - the order in which the fields are displayed depends on the order in which they are given in the query):
+All available fields (but different fields order - the order in which the fields are displayed depends on the order in which they are given in the query):
 
 [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=totalCrowns,learningLanguage,totalXp,streak)](https://github.com/artysta/artysta-cloud)
 
-Only 2 fields:
+2 fields:
 
 [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=totalCrowns,streak)](https://github.com/artysta/artysta-cloud)
 
-The user parameter missing:
+Only 1 field:
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=streak)](https://github.com/artysta/artysta-cloud)
+
+The `user` parameter missing:
 
 [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?fields=totalCrowns)](https://github.com/artysta/artysta-cloud)
+
+The `fields` parameter missing:
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek)](https://github.com/artysta/artysta-cloud)
+
+Not supported field (or just a typo in its name):
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=fromLanguage)](https://github.com/artysta/artysta-cloud)
 
 ---
 
