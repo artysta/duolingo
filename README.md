@@ -1,6 +1,6 @@
 # duolingo
 
-## 1. Description.
+## 1. Description
 
 This npm package is quite simple and rather not perfect. My main goal in creating this package was to learn how to create my own npm packages and how to add them to the official npm repository. Anyway, I believe that it might be useful for someone. 🙃
 
@@ -15,7 +15,7 @@ You can add this package to your project by running the command below:
 You can use `getField` method to get the value of the specific field from the response. Below you can find the available fields **(as of 10.02.2023)**:
 
 ```javascript
-const fields = [
+const mainFields = [
     'joinedClassroomIds',
     'streak',
     'motivation',
@@ -53,6 +53,23 @@ const fields = [
 ];
 ```
 
+You can use `getCourseField` method to get the value of the specific field for a specific course. Below you can find the available fields **(as of 12.02.2023)**:
+
+```javascript
+const coursesFields = [
+    'preload',
+    'placementTestAvailable',
+    'authorId',
+    'title',
+    'learningLanguage',
+    'xp',
+    'healthEnabled',
+    'fromLanguage',
+    'crowns',
+    'id'
+]
+```
+
 You can use `getLanguageDetail` method to get some details related to the language that you are currently learning. For example if your learning language is english, method `getField('learningLanguage')` will return `en` value. Then you can pass this value to `getLanguageDetail` method and get the full name of the language or its Emoji flag. 
 
 Below you can find some usage examples.
@@ -83,6 +100,15 @@ const Duolingo = require('duolingo');
     // Get total crowns from all of the courses.
     const totalCrowns = duo.getTotalCrowns();
     console.log(totalCrowns); // Output: 696
+
+    const learningLanguageXp = duo.getCourseField(learningLanguage, 'xp');
+    console.log(learningLanguageXp); // Output: 55185
+
+    const learningLanguageCrowns = duo.getCourseField(learningLanguage, 'crowns');
+    console.log(learningLanguageCrowns); // Output: 180
+
+    const spanishLanguageXp = duo.getCourseField('es', 'xp');
+    console.log(spanishLanguageXp); // Output: 8344
 })();
 ```
 
