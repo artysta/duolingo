@@ -1,4 +1,4 @@
-const fields = [
+const mainFields = [
     'joinedClassroomIds',
     'streak',
     'motivation',
@@ -35,6 +35,22 @@ const fields = [
     'totalXp'
 ];
 
+const coursesFields = [
+    'preload',
+    'placementTestAvailable',
+    'authorId',
+    'title',
+    'learningLanguage',
+    'xp',
+    'healthEnabled',
+    'fromLanguage',
+    'crowns',
+    'id'
+]
+
+/**
+ * This array contains some "details" of the languages.
+ */
 const languages = [
     {
         shortName: 'pl',
