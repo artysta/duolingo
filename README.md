@@ -118,7 +118,7 @@ At the moment `getLanguageDetail` method supports only 8 languages.
 
 New languages can be simply added to the `languages` constant array in `./src/constants.js` file.
 
-```
+```javascript
 const languages = {
     'pl': {
         fullName: 'Polish',
