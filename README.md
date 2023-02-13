@@ -114,16 +114,45 @@ const Duolingo = require('duolingo');
 
 ## 4. Contribution.
 
-At the moment `getLanguageDetail` method supports only 4 languages (Polish, English, German and Spanish).
+At the moment `getLanguageDetail` method supports only 8 languages.
 
 New languages can be simply added to the `languages` constant array in `./src/constants.js` file.
 
 ```
-{
-    shortName: 'jp', // This one is the 'learningLanguage' field from the response JSON, but I named it 'shortName'.
-    fullName: 'Japanese', // Full name of the language.
-    emojiFlag: '🇯🇵' // Emoji flag of the language.
-}
+const languages = {
+    'pl': {
+        fullName: 'Polish',
+        emojiFlag: '🇵🇱'
+    },
+    'en': {
+        fullName: 'English',
+        emojiFlag: '🇬🇧'
+    },
+    'de': {
+        fullName: 'German',
+        emojiFlag: '🇩🇪'
+    },
+    'es': {
+        fullName: 'Spanish',
+        emojiFlag: '🇪🇸'
+    },
+    'fr': {
+        fullName: 'French',
+        emojiFlag: '🇫🇷'
+    },
+    'it': {
+        fullName: 'Italian',
+        emojiFlag: '🇮🇹'
+    },
+    'fi': {
+        fullName: 'Finnish',
+        emojiFlag: '🇫🇮'
+    },
+    'sv': {
+        fullName: 'Swedish',
+        emojiFlag: '🇸🇪'
+    }
+};
 ```
 
 
