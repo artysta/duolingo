@@ -59,8 +59,7 @@ class Duolingo {
      * @returns The detail field related to the given language.
      */
     getLanguageDetail(shortName, field) {
-        const result = languages.filter(l => l.shortName === shortName)[0];
-        return result == undefined ? shortName : result[field];
+        return languages[shortName] == undefined ? shortName : languages[shortName][field];
     }
 
     /**

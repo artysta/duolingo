@@ -51,27 +51,39 @@ const coursesFields = [
 /**
  * This array contains some "details" of the languages.
  */
-const languages = [
-    {
-        shortName: 'pl',
+const languages = {
+    'pl': {
         fullName: 'Polish',
         emojiFlag: '🇵🇱'
     },
-    {
-        shortName: 'en',
+    'en': {
         fullName: 'English',
         emojiFlag: '🇬🇧'
     },
-    {
-        shortName: 'de',
+    'de': {
         fullName: 'German',
         emojiFlag: '🇩🇪'
     },
-    {
-        shortName: 'es',
+    'es': {
         fullName: 'Spanish',
         emojiFlag: '🇪🇸'
+    },
+    'fr': {
+        fullName: 'French',
+        emojiFlag: '🇫🇷'
+    },
+    'it': {
+        fullName: 'Italian',
+        emojiFlag: '🇮🇹'
+    },
+    'fi': {
+        fullName: 'Finnish',
+        emojiFlag: '🇫🇮'
+    },
+    'sv': {
+        fullName: 'Swedish',
+        emojiFlag: '🇸🇪'
     }
-];
+};
 
 module.exports = { languages };
