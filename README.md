@@ -162,9 +162,9 @@ I used this npm package to create Duolingo Statistics Card that displays some st
 
 Anyway, the cards can be displayed on a webpage, in the GitHub special repository or any other markdown files (e.g. `README.md`). The example below is showing how the URL should look like:
 
-    https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4
+    https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&renderTitle=true&fields=field_1,field_2,field_3,field_4,field_5,field_6
     
-The `user` query parameter is required. At the moment only 4 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`. Fields in the URL query should be separated by comma. You have to provide at least 1 `field` in the query.
+The `user` query parameter is required. The `fields` parameter is also required. You have to provide at least 1 `field` in the query. At the moment only 6 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`, `username`, `totalCourses`. Fields in the URL query should be separated by comma. The `renderTitle` parameter is optional (but its default value is `true`). If the `renderTitle` is set to `false`, the card title will not be displayed.
 
 For example, below you can find a valid URL for my Duolingo user:
 
@@ -172,21 +172,21 @@ For example, below you can find a valid URL for my Duolingo user:
 
 If it comes to a GitHub special repository or any other markdown file you can just use the markdown example below:
 
-    [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4)](https://github.com/artysta/artysta-cloud)
+    [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&fields=field_1,field_2,field_3,field_4,field_5,field_6)](https://github.com/artysta/artysta-cloud)
     
 Here are some examples how the cards can look like (I have also included non valid URLs, so some of the cards are displaying error messages):
 
 All available fields:
 
-[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=streak,totalXp,totalCrowns,learningLanguage)](https://github.com/artysta/artysta-cloud)
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=username,streak,totalXp,totalCrowns,learningLanguage,totalCourses)](https://github.com/artysta/artysta-cloud)
 
 All available fields (but different fields order - the order in which the fields are displayed depends on the order in which they are given in the query):
 
-[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=totalCrowns,learningLanguage,totalXp,streak)](https://github.com/artysta/artysta-cloud)
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=totalCrowns,learningLanguage,totalXp,streak,username,totalCourses)](https://github.com/artysta/artysta-cloud)
 
-2 fields:
+4 fields + disabled card title:
 
-[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=totalCrowns,streak)](https://github.com/artysta/artysta-cloud)
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&renderTitle=false&fields=streak,totalXp,totalCrowns,learningLanguage)](https://github.com/artysta/artysta-cloud)
 
 Only 1 field:
 
@@ -203,7 +203,3 @@ The `fields` parameter missing:
 Not supported field (or just a typo in its name):
 
 [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=fromLanguage)](https://github.com/artysta/artysta-cloud)
-
----
-
-If I find some free time (unfortunately, a day is only 24 hours long 😢) I will try to upgrade the cards and add possibility to change their style, make the title (made with ❤️...) optional using query parameters etc.
