@@ -1,4 +1,4 @@
-# duolingo
+# Duolingo API
 
 ## 1. Description
 
