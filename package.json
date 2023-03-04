@@ -1,6 +1,6 @@
 {
   "name": "duolingo",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A tiny package that makes using (unofficial) Duolingo API easier.",
   "main": "index.js",
   "scripts": {
