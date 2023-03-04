@@ -40,13 +40,13 @@ class Duolingo {
      * @returns The value of the specific field.
      */
     getField(field) {
-        if (this.data == undefined) {
+        if (this.data === undefined) {
             throw new Error('Data is not available. Please ensure that you have invoked init method which is responsible for preparing the data.');
         }
 
         const value = this.data.users[0][field];
 
-        if (value == undefined) {
+        if (value === undefined) {
             throw new Error(`Could not find the "${field}" field.`);
         }
 
@@ -55,11 +55,11 @@ class Duolingo {
 
     /**
      * @param {string} shortName The short name of the language.
-     * @param {string} field The field realted to the language.
-     * @returns The detail field related to the given language.
+     * @param {string} field The name of the field related to the language.
+     * @returns The value of the detail field related to the given language.
      */
     getLanguageDetail(shortName, field) {
-        return languages[shortName] == undefined ? shortName : languages[shortName][field];
+        return languages[shortName] === undefined ? shortName : languages[shortName][field];
     }
 
     /**
@@ -77,13 +77,13 @@ class Duolingo {
     getCourseField(learningLanguage, field) {
         const course = this.getField('courses').filter(c => c.learningLanguage === learningLanguage)[0];
 
-        if (course == undefined) {
+        if (course === undefined) {
             throw new Error(`Could not find a "${learningLanguage}" course for the "${this.user}" user.`);
         }
 
         const value = course[field];
 
-        if (value == undefined) {
+        if (value === undefined) {
             throw new Error(`Could not find a "${field}" field for the "${learningLanguage}" course.`);
         }
 
