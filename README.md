@@ -164,7 +164,7 @@ Anyway, the cards can be displayed on a webpage, in the GitHub special repositor
 
     https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&renderTitle=true&fields=field_1,field_2,field_3,field_4,field_5,field_6
     
-The `user` query parameter is required. The `fields` parameter is also required. You have to provide at least 1 `field` in the query. At the moment only 6 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`, `username`, `totalCourses`. Fields in the URL query should be separated by comma. The `renderTitle` parameter is optional (but its default value is `true`). If the `renderTitle` is set to `false`, the card title will not be displayed.
+The `user` query parameter is required. The `fields` parameter is also required. You have to provide at least 1 `field` in the query. At the moment only 6 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`, `username`, `totalCourses`. Fields in the URL query should be separated by comma. The `renderTitle` parameter is optional (but its default value is `true`). If the `renderTitle` is set to `false`, the card title will not be displayed. You can also use the optional `lightTheme` parameter to define, if the card should be displayed in light or night mode - the default value of this parameter is `false`.
 
 For example, below you can find a valid URL for my Duolingo user:
 
@@ -176,9 +176,13 @@ If it comes to a GitHub special repository or any other markdown file you can ju
     
 Here are some examples how the cards can look like (I have also included non valid URLs, so some of the cards are displaying error messages):
 
-All available fields:
+All available fields (dark theme):
 
 [![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&fields=username,streak,totalXp,totalCrowns,learningLanguage,totalCourses)](https://github.com/artysta/artysta-cloud)
+
+All available fields (light theme):
+
+[![artysta's GitHub Statistics](https://artysta-cloud.vercel.app/api/duolingo/statistics?user=adrian_kurek&lightTheme=true&fields=username,streak,totalXp,totalCrowns,learningLanguage,totalCourses)](https://github.com/artysta/artysta-cloud)
 
 All available fields (but different fields order - the order in which the fields are displayed depends on the order in which they are given in the query):
 
