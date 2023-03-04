@@ -160,11 +160,11 @@ const languages = {
 
 I used this npm package to create Duolingo Statistics Card that displays some statistics for a specific user. The data is always "fresh" as the package is using the API to retrieve it, but to be honest I do not know how many times a single IP address can hit this API, because it is not really "official". Therefore I cannot guarantee that the application which allows to render those cards will be working without any problems.
 
-Anyway, the cards can be displayed on a webpage, in the GitHub special repository or any other markdown files (e.g. `README.md`). The example below is showing how the URL should look like:
+Anyway, the cards can be displayed on a webpage, in the GitHub special repository or any other markdown file (e.g. `README.md`). The example below is showing how the URL should look like:
 
     https://artysta-cloud.vercel.app/api/duolingo/statistics?user=your_user_name&renderTitle=true&fields=field_1,field_2,field_3,field_4,field_5,field_6
     
-The `user` query parameter is required. The `fields` parameter is also required. You have to provide at least 1 `field` in the query. At the moment only 6 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`, `username`, `totalCourses`. Fields in the URL query should be separated by comma. The `renderTitle` parameter is optional (but its default value is `true`). If the `renderTitle` is set to `false`, the card title will not be displayed. You can also use the optional `lightTheme` parameter to define, if the card should be displayed in light or night mode - the default value of this parameter is `false`.
+The `user` query parameter is required. The `fields` parameter is also required. You have to provide at least 1 `field` in the query. At the moment only 6 fields are supported: `streak`, `totalXp`, `totalCrowns`, `learningLanguage`, `username`, `totalCourses`. Fields in the URL query should be separated by comma. The `renderTitle` parameter is optional (but its default value is `true`). If the `renderTitle` is set to `false`, the card title will not be displayed. You can also use the optional `lightTheme` parameter to define, if the card should be displayed in light or dark mode - the default value of this parameter is `false`.
 
 For example, below you can find a valid URL for my Duolingo user:
 
