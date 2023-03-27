@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/artysta/duolingo#readme",
   "dependencies": {
+    "jest": "^29.5.0",
     "xhr2": "^0.2.1"
   }
 }
