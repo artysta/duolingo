@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/artysta/duolingo.git"
   },
-  "keywords": ["duolingo", "api"],
+  "keywords": [
+    "duolingo",
+    "api",
+    "javascript api"
+  ],
   "author": "Adrian Kurek",
   "license": "ISC",
   "bugs": {
